@@ -58,16 +58,15 @@ The cost function for the optimization problem performed at each prediction hori
 
 
 
+
 $$
-\begin{alignat*}{3}
-\underset{x_{0:N}, u_{0:N}}{min} \;\;\;\;\;\;& \Sigma_{t=0}^N \Sigma_{i} \left (x_t^i + \Delta u_t^i R \right) & \;\;\;\;\;\; \forall i\in \{F,D,W,R1,R2,R3\}\\ 
-
-\\
-\text{subject to:       }\;\;& &   \\
-
-& 0 \leq x_t^i \leq C        &  \forall i\in \{F,D,W,R1,R2,R3\}\\
-& 0 \leq u_t^i \leq O        &  \forall i\in \{F,D,W,R1,R2,R3\}\\
-\end{alignat*}{}
+\begin{alignat*}{1}
+\underset{x_{0:N}, u_{0:N}}{min} & \Sigma_{t=0}^N \Sigma_{i} \left (x_t^i + \Delta u_t^i R \right) \text{\;\;\;\;\;\;} \forall i\in \{F,D,W,R1,R2,R3\} \\
+& \\
+\text{subject to:} \\
+& 0 \leq x_t^i \leq C  \text{\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;} \forall i\in \{F,D,W,R1,R2,R3\}\\
+& 0 \leq u_t^i \leq O  \text{\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;} \forall i\in \{F,D,W,R1,R2,R3\}
+\end{alignat*}
 $$
 
 where 
