@@ -1,3 +1,4 @@
+[![Open In nbviewer](https://user-images.githubusercontent.com/2791223/29387450-e5654c72-8294-11e7-95e4-090419520edb.png)](https://nbviewer.org/github/Robaie98/mpc-supply_chain/blob/master/SCO.ipynb)
 # Model Predictive Control for Supply Chain Bullwhip Effect Reduction
 ## Introductions
 This project utilizes Model Predictive Control (MPC) to provide supervisory control of orders made between a 4-echelon supply chain while minimizing the amplification of the bullwhip effect. The project aims to gauge the improvement of utilizing MPC over a traditional ordering method on a public dataset obtained from Kaggle.  
@@ -56,18 +57,12 @@ where:
 The cost function for the optimization problem performed at each prediction horizon involves only the inventory levels at each echelon and a penalizing term to prevent the oscillation of manipulated variables, $u_t^i$.   
 
 
+<br>
+<p align="center">
+  <img  src="images/eq.png">
+</p>
+<br>
 
-
-
-$$
-\begin{alignat*}{1}
-\underset{x_{0:N}, u_{0:N}}{min} & \Sigma_{t=0}^N \Sigma_{i} \left (x_t^i + \Delta u_t^i R \right) \;\;\;\;\;\; \forall i\in \{F,D,W,R1,R2,R3\} \\
-& \\
-\text{subject to:} \\
-& 0 \leq x_t^i \leq C  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\forall i\in \{F,D,W,R1,R2,R3\}\\
-& 0 \leq u_t^i \leq O  \;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\; \forall i\in \{F,D,W,R1,R2,R3\}
-\end{alignat*}
-$$
 
 where 
 - $R$: The penalizing term for changes in $u_t^i$.
